@@ -1,0 +1,26 @@
+# Build Pipeline for NuGet Packages
+
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+resources:
+  repositories:
+    - repository: templates
+      endpoint: 'Github'
+      type: github
+      name: AlefCarlos/PlusUltra.Azure.Templates
+
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+    - README.md
+    - examples/*
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-latest'
+
+  steps:
+    - template: nuget-default.yml@templates
