@@ -9,7 +9,7 @@ This project was inspired by [e-conomic/csharp-grpc-prometheus](https://github.c
 
 Add AppMetrics standlone server
 
-```sharp
+```csharp
 services.AddStandaloneMetricsServer(options => {
     options.ListenAnyIP(1010); //here you can set target port
     options.AllowSynchronousIO = true;
