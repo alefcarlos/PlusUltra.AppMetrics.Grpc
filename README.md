@@ -5,7 +5,7 @@
 
 This project was inspired by [e-conomic/csharp-grpc-prometheus](https://github.com/e-conomic/csharp-grpc-prometheus) 
 
-# Usage
+## Usage
 
 Add AppMetrics standlone server
 
@@ -25,4 +25,4 @@ services.AddGrpc(options =>
 });
 ```
 
-Open the url https://localhost:1010/metrics
+Open the url http://localhost:1010/metrics
